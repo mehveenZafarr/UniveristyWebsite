@@ -1,0 +1,200 @@
+/* src/index.css or src/styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="text"], input[type="password"], input[type="email"],input[type="number"], input[type="tel"], textarea {
+  @apply w-full border my-1 py-2 px-3 rounded-2xl bg-slate-300 opacity-50;
+}
+textarea{
+  height: 140px;
+}
+button{
+  @apply bg-gray-300;
+}
+
+button.primary{
+  background-color: #1D90F5;
+  @apply mt-2 p-2 w-full text-white rounded-2xl;
+}
+.dotColor{
+  color: #1D90F5;
+}
+
+.zoom-bg{
+  background-size: 100%;
+  background-image: url('/loginBackgroundImage.jpg');
+  transition: background-size 0.5s ease-in-out;
+}
+.zoom-bg:hover{
+  background-size: 100%;
+}
+
+.bg-primary {
+  background: linear-gradient(135deg, #0f172a, #1c2b53);
+}
+.card-backgrounds {
+  background: linear-gradient(135deg, #d4d4d4, #f0f0f0);
+}
+
+.hover-button:hover {
+  background-color: #2b6cb0;
+  transform: translateY(-2px);
+}
+
+.image-slider {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.text-container {
+  padding: 20px;
+  margin: 20px;
+  background-color: #1e293b; /* Darker background */
+}
+
+.content-text {
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: hsl(45, 27%, 94%);
+}
+
+.moving-text-container {
+  width: 100%; /* Full-width container */
+  overflow: hidden; /* Hides text overflow */
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.moving-text {
+  display: inline-block;
+  padding-left: 100%; /* Start text outside the visible area */
+  animation: moveText 20s linear infinite; /* Move text infinitely */
+}
+
+@keyframes moveText {
+  0% {
+    transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left */
+  }
+}
+
+/*Here*/
+.text-lg {
+  font-size: 1.125rem; /* Large text size */
+  font-weight: 500; /* Medium weight for better readability */
+}
+
+.text-gray-700 {
+  color: #4a5568; /* Softer gray for text */
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.leading-relaxed {
+  line-height: 1.75; /* More relaxed line spacing */
+}
+
+@media (max-width: 768px) {
+  .size-6 {
+    width: 24px;
+    height: 24px;
+  }
+  .text-lg {
+    font-size: 1rem; /* Slightly smaller text on mobile */
+  }
+  .p-4 {
+    padding: 0.5rem; /* Less padding on mobile */
+  }
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #0f172a, #1c2b53); /* Dark theme background */
+}
+
+.text-primary-600 {
+  color: #3b82f6; /* Primary color */
+}
+
+.action-button {
+  background: linear-gradient(135deg, #0f172a, #1c2b53);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.bg-gradient-to-r {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb); /* Subtle gradient */
+}
+.text-blue-500 {
+  color: #3b82f6; /* Accent color */
+}
+.notification {
+  background-color: linear-gradient(135deg, #1e3a8a, #2563eb, #ECEFF1);; /* Light yellow background */
+  padding: 1rem;
+}
+.text-container {
+  transition: transform 0.3s ease-in-out; /* Adjust duration and timing as needed */
+}
+
+.text-container:hover {
+  transform: translateY(-20px); /* Move text up on hover */
+}
+
+.moving-container {
+  height: 100px; /* Set a fixed height for the container */
+  overflow: hidden; /* Hides text overflow */
+}
+
+.moving-block {
+  display: block;
+  padding-top: 100%; /* Start text outside the visible area */
+  animation: moveContainer 20s linear infinite; /* Move text infinitely */
+}
+
+@keyframes moveContainer {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .print-container {
+    display: flex;
+    flex-direction: column; /* Stack the vouchers vertically */
+    align-items: center;
+    page-break-inside: avoid; /* Prevent elements from splitting across pages */
+  }
+  .voucher {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #000; /* Add clear boundaries */
+  }
+  button, header, footer {
+    display: none; /* Hide non-essential elements when printing */
+  }
+}
